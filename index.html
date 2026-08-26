@@ -220,6 +220,7 @@
         .service-box-image {
             padding: 0;
             overflow: hidden;
+            position: relative;
         }
         .service-box-img {
             width: 100%;
@@ -228,6 +229,24 @@
             border-radius: 8px;
             margin: 0;
             display: block;
+        }
+        .service-box-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 30px 15px 16px 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.88) 10%, rgba(0,0,0,0.05) 100%);
+            border-radius: 0 0 8px 8px;
+        }
+        .service-box-caption h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--secondary-orange);
+            font-size: 1.05rem;
+            line-height: 1.3;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Respaldo y Academia */
@@ -371,18 +390,30 @@
         <div class="services-grid">
             <div class="service-box service-box-image">
                 <img src="hoteles.png" alt="Hoteles y Resorts" class="service-box-img">
+                <div class="service-box-caption">
+                    <h3>Los mejores hoteles y resorts a precios mayoristas</h3>
+                </div>
             </div>
 
             <div class="service-box service-box-image">
                 <img src="rentacar.png" alt="Renta de Vehículos" class="service-box-img">
+                <div class="service-box-caption">
+                    <h3>Renta tu vehículo a un precio que te sorprenderá</h3>
+                </div>
             </div>
 
             <div class="service-box service-box-image">
                 <img src="tours.png" alt="Tours y Excursiones" class="service-box-img">
+                <div class="service-box-caption">
+                    <h3>Los mejores tours y excursiones a precios mayoristas</h3>
+                </div>
             </div>
 
             <div class="service-box service-box-image">
                 <img src="golden.png" alt="Golden Tickets" class="service-box-img">
+                <div class="service-box-caption">
+                    <h3>Conciertos y eventos deportivos a precios mayoristas</h3>
+                </div>
             </div>
         </div>
         
