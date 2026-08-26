@@ -8,7 +8,8 @@
         /* Estilos Generales */
         :root {
             --primary-color: #0b2545; /* Azul marino profundo */
-            --secondary-color: #f7921e; /* Naranja/Dorado para llamados a la acción */
+            --secondary-color: #f7921e; /* Naranja/Dorado */
+            --accent-color: #1a4f8b;
             --text-color: #333333;
             --bg-light: #f4f7f6;
         }
@@ -21,7 +22,7 @@
         }
         h1, h2, h3 {
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         a {
             text-decoration: none;
@@ -30,7 +31,7 @@
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            padding: 40px 0;
+            padding: 50px 0;
         }
         img {
             max-width: 100%;
@@ -43,22 +44,16 @@
             display: inline-block;
             background-color: var(--secondary-color);
             color: #fff;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             transition: background 0.3s;
             text-align: center;
         }
-        .btn:hover {
-            background-color: #d87c14;
-        }
-        .btn-whatsapp {
-            background-color: #25D366;
-        }
-        .btn-whatsapp:hover {
-            background-color: #1ebe57;
-        }
+        .btn:hover { background-color: #d87c14; }
+        .btn-whatsapp { background-color: #25D366; font-size: 1.1rem; padding: 15px 30px;}
+        .btn-whatsapp:hover { background-color: #1ebe57; }
 
         /* Hero Section */
         .hero {
@@ -74,103 +69,108 @@
         }
         .hero-content {
             padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
         }
-        .hero h1 {
-            color: white;
-            font-size: 2.5rem;
-            margin-top: 0;
+        .hero h1 { color: white; font-size: 2.5rem; margin-top: 0; }
+        .hero-subtitle {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Logos Respaldo */
-        .trust-section {
+        /* Sobre Mí (Perfil) */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
             background-color: white;
-            text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-img { flex: 1; min-width: 300px; text-align: center; }
+        .about-img img { max-width: 350px; border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 
-        /* Grid de Servicios y Navieras */
+        /* Grid de Navieras */
+        .cruises-section { background-color: var(--bg-light); border-radius: 15px; padding: 50px 20px; margin-top: 40px; }
         .grid-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
         .card {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Mantiene todas las fotos del mismo tamaño sin deformarlas */
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
         
-        /* Mayoristas y Proveedores */
-        .wholesale-section {
+        /* Servicios Terrestres y Eventos */
+        .services-section {
+            background-color: white;
+            text-align: center;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .service-box {
+            padding: 30px 20px;
+            border: 2px solid var(--bg-light);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .service-box:hover { transform: translateY(-5px); border-color: var(--secondary-color); }
+        .service-box h3 { color: var(--accent-color); }
+
+        /* Respaldo y Academia (Footer Superior) */
+        .trust-academy-section {
             background-color: var(--primary-color);
             color: white;
             padding: 60px 20px;
-            text-align: center;
         }
-        .wholesale-section h2 {
-            color: white;
-        }
-        .proveedores-list {
+        .trust-academy-section h2 { color: white; text-align: center; margin-bottom: 40px;}
+        .flex-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .proveedores-list span {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        /* Academia Crea */
-        .academy-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            align-items: flex-start;
+            justify-content: space-around;
             flex-wrap: wrap;
             gap: 40px;
+            max-width: 1200px;
+            margin: auto;
         }
-        .academy-text {
+        .flex-item {
             flex: 1;
-            min-width: 300px;
-        }
-        .academy-img {
-            flex: 1;
-            min-width: 300px;
+            min-width: 320px;
             text-align: center;
         }
+        .flex-item img { box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
         /* Footer */
-        footer {
-            background-color: #111;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
-        }
+        footer { background-color: #061528; color: white; text-align: center; padding: 20px 0; font-size: 0.9rem; }
 
-        /* Floating WhatsApp Button */
+        /* Botón Flotante WhatsApp */
         .float-wa {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
+            position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white;
+            border-radius: 50px; width: 60px; height: 60px; display: flex; justify-content: center;
+            align-items: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000;
         }
     </style>
 </head>
@@ -178,92 +178,134 @@
 
     <!-- Hero Section -->
     <header class="hero">
-        <!-- AQUÍ ACTUALIZAMOS EL NOMBRE A banner.jpg -->
-        <img src="banner.png" alt="Viaja en Crucero con Rodri - Banner Principal">
+        <img src="banner_2.jpg" alt="Viaja en Crucero con Rodri - Banner Principal">
         <div class="hero-content">
+            <div class="hero-subtitle">MÁS ALLÁ DEL MAR: TU AGENCIA DE VIAJES INTEGRAL</div>
             <h1>Descubre el Mundo Sin Estrés</h1>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px auto;">Especialistas en cruceros de primer nivel, experiencias VIP y acceso exclusivo a los mejores precios mayoristas del mercado.</p>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px auto;">Especialistas en cruceros de primer nivel, resorts, tours, rentas de autos y acceso exclusivo a eventos VIP con tarifas mayoristas.</p>
             <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20vengo%20de%20tu%20sitio%20web%20y%20me%20gustar%C3%ADa%20cotizar%20un%20viaje." class="btn btn-whatsapp" target="_blank">Cotizar mi Viaje Ideal</a>
         </div>
     </header>
 
-    <!-- Respaldo y Confianza -->
-    <section class="trust-section">
-        <div class="container">
-            <h2>Respaldo Internacional Garantizado</h2>
-            <p>Orgullosamente afiliados a Archer Travel Group y Crea Academy, garantizando seguridad y acceso a las mejores tarifas de la industria.</p>
-            <!-- ASUMIMOS QUE ESTA SE MANTIENE COMO licencias.jpg -->
-            <img src="licencias.png" alt="Licencias y Respaldo Archer Travel" style="max-width: 800px; margin-top: 20px;">
+    <!-- Conoce a Rodri -->
+    <section class="container about-section">
+        <div class="about-img">
+            <img src="perfil_2.jpg" alt="Rodri - Asesor de Viajes">
+        </div>
+        <div class="about-text">
+            <h2>Tu Paz Mental es mi Prioridad</h2>
+            <p><strong>¡Hola! Soy Rodri.</strong> Si estás aquí, es porque sabes que mereces unas vacaciones extraordinarias, pero no quieres lidiar con el dolor de cabeza de la logística, las filas virtuales o el miedo a perder tu inversión.</p>
+            <p>Como Asesor de Viajes Certificado, mi objetivo es planificar cada detalle de tu aventura. Ya sea que busques el lujo de un crucero exclusivo, un carro rentado esperándote en el aeropuerto, o esa entrada en primera fila para tu artista favorito. <strong>Tú solo empaca, yo me encargo del resto.</strong></p>
         </div>
     </section>
 
     <!-- Nuestras Navieras -->
-    <section class="container" style="background-color: var(--bg-light); border-radius: 15px; padding: 40px;">
-        <h2 style="text-align: center;">Navega con los Mejores</h2>
-        <p style="text-align: center; max-width: 700px; margin: auto;">Trabajamos con las líneas de cruceros más prestigiosas del mundo para diseñar la experiencia exacta que buscas.</p>
+    <section class="cruises-section">
+        <div class="container" style="padding: 0;">
+            <h2 style="text-align: center;">Navega con los Mejores</h2>
+            <p style="text-align: center; max-width: 700px; margin: auto;">Trabajamos directamente con las líneas de cruceros más prestigiosas del mundo para diseñar la experiencia exacta que buscas.</p>
+            
+            <div class="grid-section">
+                <!-- Virgin -->
+                <div class="card">
+                    <img src="virgin.png" alt="Virgin Voyages">
+                    <h3>Virgin Voyages</h3>
+                    <p>Exclusivo para Adultos. Lujo moderno, restaurantes gourmet incluidos y el mejor entretenimiento en el mar.</p>
+                    <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Virgin%20Voyages." class="btn" target="_blank">Cotizar Virgin</a>
+                </div>
+                <!-- Disney -->
+                <div class="card">
+                    <img src="disney.png" alt="Disney Cruise Line">
+                    <h3>Disney Cruise Line</h3>
+                    <p>Magia familiar inolvidable. Espectáculos deslumbrantes y experiencias diseñadas para crear recuerdos eternos.</p>
+                    <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Disney." class="btn" target="_blank">Cotizar Disney</a>
+                </div>
+                <!-- Princess -->
+                <div class="card">
+                    <img src="princess.png" alt="Princess Cruises">
+                    <h3>Princess Cruises</h3>
+                    <p>Exploración clásica y elegante. Los verdaderos expertos para llevarte a destinos majestuosos como Alaska y Japón.</p>
+                    <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Princess." class="btn" target="_blank">Cotizar Princess</a>
+                </div>
+                <!-- Royal Caribbean -->
+                <div class="card">
+                    <img src="royal.png" alt="Royal Caribbean">
+                    <h3>Royal Caribbean</h3>
+                    <p>Aventura sin límites. Los barcos más grandes y épicos del mundo, llenos de toboganes, surf y máxima diversión.</p>
+                    <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Royal%20Caribbean." class="btn" target="_blank">Cotizar Royal</a>
+                </div>
+                <!-- MSC -->
+                <div class="card">
+                    <img src="MSC.png" alt="MSC Cruises">
+                    <h3>MSC Cruises</h3>
+                    <p>Elegancia europea de vanguardia. Diseños impresionantes, destinos globales y una experiencia cosmopolita.</p>
+                    <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20MSC." class="btn" target="_blank">Cotizar MSC</a>
+                </div>
+                <!-- Norwegian -->
+                <div class="card">
+                    <img src="norwegian.png" alt="Norwegian Cruise Line">
+                    <h3>Norwegian Cruise Line</h3>
+                    <p>El pionero del estilo libre. Sin códigos de vestimenta estrictos, sin horarios de cena fijos, solo vacaciones a tu ritmo.</p>
+                    <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Norwegian." class="btn" target="_blank">Cotizar NCL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Terrestres y Mayoristas -->
+    <section class="container services-section">
+        <h2>Mucho más que Cruceros: Tu Viaje Completo</h2>
+        <p style="max-width: 800px; margin: auto; font-size: 1.1rem;">Como agencia integral, te ofrecemos <strong>tarifas mayoristas exclusivas</strong> en todos los servicios en tierra que necesitas, respaldados por los mejores proveedores de la industria.</p>
         
-        <div class="grid-section">
-            <div class="card">
-                <!-- AQUÍ ACTUALIZAMOS EL NOMBRE A perfil.jpg -->
-                <img src="perfil.png" alt="Virgin Voyages">
-                <h3>Virgin Voyages</h3>
-                <p>Exclusivo para Adultos. Lujo moderno y entretenimiento de primer nivel en el mar.</p>
-                <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Virgin%20Voyages." class="btn" target="_blank" style="font-size: 0.9rem; padding: 10px 20px;">Cotizar Virgin</a>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3 style="font-size: 2rem; margin: 0;">🏨</h3>
+                <h3>Hoteles y Resorts</h3>
+                <p>Desde estadías boutique hasta resorts todo incluido en los destinos más cotizados.</p>
             </div>
-            <div class="card">
-                <h3>Disney Cruise Line</h3>
-                <p>Magia familiar inolvidable. Experiencias diseñadas para crear recuerdos para toda la vida.</p>
-                <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Disney." class="btn" target="_blank" style="font-size: 0.9rem; padding: 10px 20px;">Cotizar Disney</a>
+            <div class="service-box">
+                <h3 style="font-size: 2rem; margin: 0;">🚗</h3>
+                <h3>Renta de Vehículos</h3>
+                <p>Libertad total en tu destino gracias a nuestras alianzas preferenciales con <strong>Agentcars</strong>.</p>
             </div>
-            <div class="card">
-                <h3>Princess Cruises</h3>
-                <p>Exploración clásica y acceso a destinos majestuosos como Alaska y Japón.</p>
-                <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero%20con%20Princess." class="btn" target="_blank" style="font-size: 0.9rem; padding: 10px 20px;">Cotizar Princess</a>
+            <div class="service-box">
+                <h3 style="font-size: 2rem; margin: 0;">🗺️</h3>
+                <h3>Tours y Excursiones</h3>
+                <p>Experiencias guiadas, entradas a parques temáticos y aventuras locales seguras.</p>
             </div>
-            <div class="card">
-                <h3>Royal Caribbean, MSC y Norwegian</h3>
-                <p>Aventura sin límites, barcos épicos, estilo libre y la máxima diversión para todos.</p>
-                <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20cotizar%20un%20crucero." class="btn" target="_blank" style="font-size: 0.9rem; padding: 10px 20px;">Ver Opciones</a>
+            <div class="service-box">
+                <h3 style="font-size: 2rem; margin: 0;">🎟️</h3>
+                <h3>Golden Tickets</h3>
+                <p>¡Di adiós al Sold Out! Acceso VIP garantizado a conciertos internacionales y eventos deportivos.</p>
             </div>
+        </div>
+        
+        <div style="margin-top: 40px;">
+            <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20me%20interesan%20los%20servicios%20en%20tierra%20o%20Golden%20Tickets." class="btn btn-whatsapp" target="_blank">Cotizar Hoteles, Autos o Entradas VIP</a>
         </div>
     </section>
 
-    <!-- Precios Mayoristas y Proveedores -->
-    <section class="wholesale-section">
-        <div class="container">
-            <h2>Más Allá del Mar: Precios Mayoristas</h2>
-            <p style="max-width: 800px; margin: auto; font-size: 1.1rem;">No solo dominamos los océanos. Te ofrecemos tarifas mayoristas exclusivas en renta de vehículos, hoteles de lujo, tours guiados y nuestra especialidad: <strong>Golden Tickets</strong>, tu acceso garantizado a los mejores conciertos y eventos deportivos del mundo entero.</p>
+    <!-- Respaldo Internacional y Academia (Bottom Section) -->
+    <section class="trust-academy-section">
+        <h2>Respaldo Internacional y Oportunidad de Negocio</h2>
+        <div class="flex-container">
             
-            <div class="proveedores-list">
-                <span>Disney</span>
-                <span>Universal</span>
-                <span>Golden Tickets</span>
-                <span>Viator</span>
-                <span>Expedia Taap</span>
-                <span>Azabache</span>
-                <span>Mundomar</span>
-                <span>Royal Caribbean</span>
+            <!-- Bloque Licencias -->
+            <div class="flex-item">
+                <h3 style="color: var(--secondary-color);">Tu Inversión Está Segura</h3>
+                <p style="margin-bottom: 20px; font-size: 0.95rem;">Estamos orgullosamente afiliados a Archer Travel Group, garantizando seguridad, protección y acceso a las mejores licencias de la industria del turismo mundial.</p>
+                <img src="licencias.jpg" alt="Licencias y Respaldo Archer Travel">
             </div>
-            
-            <div style="margin-top: 40px;">
-                <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20me%20interesan%20los%20Golden%20Tickets%20o%20servicios%20mayoristas." class="btn btn-whatsapp" target="_blank">Cotizar Entradas VIP o Paquetes</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Academia Crea (Reclutamiento) -->
-    <section class="container">
-        <div class="academy-section">
-            <div class="academy-text">
-                <h2>Convierte tu Pasión en tu Profesión</h2>
-                <p>Si tienes el don de organizar, te apasiona ayudar a otros a cumplir sus sueños y buscas un cambio de vida real, te estamos esperando.</p>
-                <p>Al unirte a nuestro equipo como Agente de Viajes, serás bienvenido a la <strong>Crea Travel Academy</strong>. Te formaremos desde cero y tendrás <em>trabajito asegurado</em>. Esta oportunidad nos ha dado libertad financiera, geográfica y mental, y cambiará tu vida también.</p>
-                <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20saber%20c%C3%B3mo%20unirme%20a%20la%20Academia%20y%20ser%20Agente%20de%20Viajes." class="btn" style="margin-top: 15px;" target="_blank">Quiero Ser Agente de Viajes</a>
+            <!-- Bloque Academia -->
+            <div class="flex-item">
+                <h3 style="color: var(--secondary-color);">Únete a Nuestro Equipo</h3>
+                <p style="margin-bottom: 20px; font-size: 0.95rem;">¿Te apasiona viajar? Únete a Crea Travel Academy. Te formamos desde cero para ser Asesor de Viajes con trabajito asegurado y libertad financiera.</p>
+                <img src="ParaLives.jpg" alt="Únete a Crea Travel Academy">
+                <br><br>
+                <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20quiero%20saber%20c%C3%B3mo%20unirme%20a%20la%20Academia%20y%20ser%20Agente%20de%20Viajes." class="btn" target="_blank" style="background-color: white; color: var(--primary-color);">Quiero Ser Agente de Viajes</a>
             </div>
-            <div class="academy-img">
-                <!-- ASUMIMOS QUE ESTA SE MANTIENE COMO ParaLives.jpg -->
-                <img src="ParaLives.png" alt="Únete a Crea Travel Academy" style="max-width: 350px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-            </div>
+
         </div>
     </section>
 
