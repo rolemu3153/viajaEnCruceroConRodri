@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaja en Crucero con Rodri | Asesor de Viajes</title>
+    
+    <!-- Importando Tipografías Premium para los Logos -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         /* Estilos Generales - Tema Oscuro (Premium) */
         :root {
@@ -81,25 +85,45 @@
             letter-spacing: 1px;
         }
         
-        /* Logos de Navieras y Proveedores en Hero */
-        .hero-logos {
+        /* -------------------------------------------
+           NUEVO SISTEMA DE LOGOS TIPOGRÁFICOS (PLAN B)
+           ------------------------------------------- */
+        .brand-logos {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 40px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
-        .hero-logos div {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px 15px;
-            border-radius: 8px;
+        .brand-badge {
+            background: rgba(255, 255, 255, 0.03); /* Fondo casi transparente */
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Borde sutil blanco */
+            padding: 10px 18px;
+            border-radius: 6px;
+            color: #ffffff; /* Texto blanco puro */
             display: flex;
             align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            justify-content: center;
+            transition: all 0.3s ease;
         }
-        .hero-logos img {
-            height: 25px;
-            object-fit: contain;
+        .brand-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Estilos de Letra para simular logos */
+        .logo-serif {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+        }
+        .logo-sans {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
         }
 
         /* Sobre Mí (Perfil) */
@@ -179,22 +203,6 @@
         }
         .service-box:hover { transform: translateY(-5px); border-color: var(--secondary-orange); }
         .service-box p { color: var(--text-muted); }
-        
-        /* Logos dentro de servicios */
-        .provider-logos {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-            background: white; 
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .provider-logos img {
-            height: 20px;
-            object-fit: contain;
-        }
 
         /* Respaldo y Academia */
         .trust-academy-section {
@@ -222,12 +230,13 @@
         /* Footer */
         footer { background-color: #050d1a; color: var(--text-muted); text-align: center; padding: 25px 0; font-size: 0.9rem; border-top: 1px solid var(--accent-blue); }
 
-        /* Botón Flotante WhatsApp - Este SÍ queda en su clásico verde */
+        /* Botón Flotante WhatsApp - Clásico verde */
         .float-wa {
             position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white;
             border-radius: 50px; width: 60px; height: 60px; display: flex; justify-content: center;
             align-items: center; box-shadow: 2px 2px 15px rgba(0,0,0,0.5); z-index: 1000;
         }
+        .float-wa:hover { background-color: #1ebe57; }
     </style>
 </head>
 <body>
@@ -241,16 +250,16 @@
             <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px auto; color: var(--text-muted);">Especialistas en cruceros de primer nivel, resorts, tours, rentas de autos y acceso exclusivo a eventos VIP con tarifas mayoristas.</p>
             <a href="https://wa.me/50686366050?text=Hola%20Rodri,%20vengo%20de%20tu%20sitio%20web%20y%20me%20gustar%C3%ADa%20cotizar%20un%20viaje." class="btn" target="_blank">Cotizar mi Viaje Ideal</a>
             
-            <!-- Logos de Cruceros y Proveedores en el Hero -->
-            <div class="hero-logos">
-                <div><img src="iconovirgin.png" alt="Virgin Voyages"></div>
-                <div><img src="iconodisney.png" alt="Disney Cruise Line"></div>
-                <div><img src="iconoprincess.png" alt="Princess Cruises"></div>
-                <div><img src="iconoroyal.png" alt="Royal Caribbean"></div>
-                <div><img src="viator.png" alt="Viator"></div>
-                <div><img src="expedia.png" alt="Expedia Taap"></div>
-                <div><img src="azabache.png" alt="Azabache"></div>
-                <div><img src="agentcars.png" alt="Agentcars"></div>
+            <!-- Logos Tipográficos en el Hero -->
+            <div class="brand-logos" style="margin-top: 40px;">
+                <div class="brand-badge logo-sans">Virgin Voyages</div>
+                <div class="brand-badge logo-serif">Disney Cruise Line</div>
+                <div class="brand-badge logo-serif">Princess Cruises</div>
+                <div class="brand-badge logo-sans">Royal Caribbean</div>
+                <div class="brand-badge logo-sans">Viator</div>
+                <div class="brand-badge logo-sans">Expedia Taap</div>
+                <div class="brand-badge logo-serif">Azabache</div>
+                <div class="brand-badge logo-sans">Agentcars</div>
             </div>
         </div>
     </header>
@@ -334,10 +343,10 @@
                     <h3>Hoteles y Resorts</h3>
                     <p>Desde estadías boutique hasta resorts todo incluido en los destinos más cotizados.</p>
                 </div>
-                <div class="provider-logos">
-                    <img src="viator.png" alt="Viator">
-                    <img src="expedia.png" alt="Expedia Taap">
-                    <img src="azabache.png" alt="Azabache">
+                <div class="brand-logos" style="margin-top: 15px;">
+                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Viator</div>
+                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Expedia Taap</div>
+                    <div class="brand-badge logo-serif" style="padding: 5px 10px; font-size: 0.85rem;">Azabache</div>
                 </div>
             </div>
             
@@ -347,8 +356,8 @@
                     <h3>Renta de Vehículos</h3>
                     <p>Libertad total en tu destino gracias a nuestras alianzas preferenciales.</p>
                 </div>
-                <div class="provider-logos">
-                    <img src="agentcars.png" alt="Agentcars">
+                <div class="brand-logos" style="margin-top: 15px;">
+                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Agentcars</div>
                 </div>
             </div>
             
@@ -358,10 +367,10 @@
                     <h3>Tours y Excursiones</h3>
                     <p>Experiencias guiadas, entradas a parques temáticos y aventuras locales seguras.</p>
                 </div>
-                <div class="provider-logos">
-                    <img src="viator.png" alt="Viator">
-                    <img src="expedia.png" alt="Expedia Taap">
-                    <img src="azabache.png" alt="Azabache">
+                <div class="brand-logos" style="margin-top: 15px;">
+                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Viator</div>
+                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Expedia Taap</div>
+                    <div class="brand-badge logo-serif" style="padding: 5px 10px; font-size: 0.85rem;">Azabache</div>
                 </div>
             </div>
             
