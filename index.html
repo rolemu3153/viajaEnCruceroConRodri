@@ -217,6 +217,18 @@
         }
         .service-box:hover { transform: translateY(-5px); border-color: var(--secondary-orange); }
         .service-box p { color: var(--text-muted); }
+        .service-box-image {
+            padding: 0;
+            overflow: hidden;
+        }
+        .service-box-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0;
+            display: block;
+        }
 
         /* Respaldo y Academia */
         .trust-academy-section {
@@ -357,49 +369,20 @@
         <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: var(--text-muted);">Como agencia integral, te ofrecemos <strong>tarifas mayoristas exclusivas</strong> en todos los servicios en tierra que necesitas, respaldados por los mejores proveedores de la industria.</p>
         
         <div class="services-grid">
-            <div class="service-box">
-                <div>
-                    <h3 style="font-size: 2rem; margin: 0;">🏨</h3>
-                    <h3>Hoteles y Resorts</h3>
-                    <p>Desde estadías boutique hasta resorts todo incluido en los destinos más cotizados.</p>
-                </div>
-                <div class="brand-logos" style="margin-top: 15px;">
-                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Viator</div>
-                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Expedia Taap</div>
-                    <div class="brand-badge logo-serif" style="padding: 5px 10px; font-size: 0.85rem;">Azabache</div>
-                </div>
+            <div class="service-box service-box-image">
+                <img src="hoteles.png" alt="Hoteles y Resorts" class="service-box-img">
             </div>
-            
-            <div class="service-box">
-                <div>
-                    <h3 style="font-size: 2rem; margin: 0;">🚗</h3>
-                    <h3>Renta de Vehículos</h3>
-                    <p>Libertad total en tu destino gracias a nuestras alianzas preferenciales.</p>
-                </div>
-                <div class="brand-logos" style="margin-top: 15px;">
-                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Agentcars</div>
-                </div>
+
+            <div class="service-box service-box-image">
+                <img src="rentacar.png" alt="Renta de Vehículos" class="service-box-img">
             </div>
-            
-            <div class="service-box">
-                <div>
-                    <h3 style="font-size: 2rem; margin: 0;">🗺️</h3>
-                    <h3>Tours y Excursiones</h3>
-                    <p>Experiencias guiadas, entradas a parques temáticos y aventuras locales seguras.</p>
-                </div>
-                <div class="brand-logos" style="margin-top: 15px;">
-                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Viator</div>
-                    <div class="brand-badge logo-sans" style="padding: 5px 10px; font-size: 0.75rem;">Expedia Taap</div>
-                    <div class="brand-badge logo-serif" style="padding: 5px 10px; font-size: 0.85rem;">Azabache</div>
-                </div>
+
+            <div class="service-box service-box-image">
+                <img src="tours.png" alt="Tours y Excursiones" class="service-box-img">
             </div>
-            
-            <div class="service-box">
-                <div>
-                    <h3 style="font-size: 2rem; margin: 0;">🎟️</h3>
-                    <h3>Golden Tickets</h3>
-                    <p>¡Di adiós al Sold Out! Acceso VIP garantizado a conciertos internacionales y eventos deportivos.</p>
-                </div>
+
+            <div class="service-box service-box-image">
+                <img src="golden.png" alt="Golden Tickets" class="service-box-img">
             </div>
         </div>
         
